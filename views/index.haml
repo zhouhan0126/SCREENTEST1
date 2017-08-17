@@ -125,7 +125,7 @@
                       .control-group
                         .filedrop
                           .upload-header
-                            %button.btn 添加文件..
+                            %button.btn 上传文件..
                             %input(type="file", name="file_upload")
                             %br
                             or
@@ -263,7 +263,7 @@
               %a#add-asset-button.btn.btn-primary(href="#")
                 %i.icon-plus.icon-white
                 添加资源
-            首页－资源设置
+            资源设置
           - if player_name:
             %h2
               ${player_name}
@@ -272,7 +272,7 @@
         .span12
           %section
             .header
-              活跃资源
+              正在播放资源
             %table.table.table-striped.active-table
               %thead(style="display:none")
                 %tr
@@ -285,7 +285,7 @@
         .span12
           %section
             .header
-              不活跃资源
+              待播放资源
             %table.table.table-striped.inactive-table
               %thead(style="display:none")
                 %tr

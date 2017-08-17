@@ -4,9 +4,9 @@
   %head
     %meta(charset="utf-8")
       - if not player_name:
-        %title Screenly OSE
+        %title Weread
       - else:
-        %title Screenly OSE - ${player_name}
+        %title Weread - ${player_name}
 
     %link(href="/static/css/bootstrap.css", rel="stylesheet")
     %link(href="/static/css/screenly.css", rel="stylesheet")
@@ -41,12 +41,12 @@
             %li
               %a(href="/settings")
                 %i.icon-cog.icon-white
-                Settings
+                设置
             %li.divider-vertical
             %li
               %a(href="/system_info")
                 %i.icon-tasks.icon-white
-                System Info
+                系统信息
 
     .container
       .row
@@ -62,12 +62,12 @@
 
           %form.form-horizontal(method="post")
             .control-group
-              %label.control-label Player name
+              %label.control-label 使用者
               .controls
                %input.span4(type="text", name="player_name", value=player_name) 
 
             .control-group
-              %label.control-label Show splash screen
+              %label.control-label 显示启动屏幕
               .controls
                 %label.checkbox.toggle.well#splash_checkbox
                   - if show_splash:
@@ -80,7 +80,7 @@
                   %a.btn.btn-primary.slide-button
 
             .control-group
-              %label.control-label Shuffle playlist
+              %label.control-label 随机播放列表
               .controls
 
                 %label.checkbox.toggle.well#shuffle_checkbox
@@ -94,7 +94,7 @@
                   %a.btn.btn-primary.slide-button
 
             .control-group
-              %label.control-label Audio output
+              %label.control-label 音频输出
               .controls
                 %select.span2(name="audio_output")
                   - if audio_output == 'hdmi':
@@ -105,7 +105,7 @@
                     %option(value="local", selected="selected") 3.5mm jack
 
             .control-group
-              %label.control-label Default duration
+              %label.control-label 默认持续时间
               .controls
                 %input.span1(type="number", name="default_duration", value=default_duration)
 
@@ -115,7 +115,7 @@
                 %input.span1(type="number", name="default_streaming_duration", value=default_streaming_duration)
 
             .control-group
-              %label.control-label Use 24-hour clock
+              %label.control-label 使用24小时制
               .controls
 
                 %label.checkbox.toggle.well#use_24_hour_clock_checkbox
@@ -129,7 +129,7 @@
                   %a.btn.btn-primary.slide-button
 
             .control-group
-              %label.control-label Debug logging
+              %label.control-label 调试日志
               .controls
 
                 %label.checkbox.toggle.well#debug_checkbox
@@ -143,15 +143,15 @@
                   %a.btn.btn-primary.slide-button
 
             .form-actions
-              %input.btn.btn-primary(type="submit", value="Save Settings")
-              %a.btn(href="/") Cancel
+              %input.btn.btn-primary(type="submit", value="保存设置")
+              %a.btn(href="/") 取消
 
         #backup-section.span12
           %h1.page-header
-            Backup
+            备份
           %input(type="file", name="backup_upload", style="display:none")
-          %button#btn-upload.btn.btn-primary(type="button") Upload and Recover
-          %button#btn-backup.btn Get backup
+          %button#btn-upload.btn.btn-primary(type="button") 上传并恢复
+          %button#btn-backup.btn 备份
           
           .progress.progress-striped.active(style="display:none")
             .bar
@@ -160,6 +160,6 @@
     #footer
       .container
         .copy
-          &copy; Screenly, Inc.
-        %a(id="screenly-logo", href="http://screenly.io/", target="_blank")
+          &copy; Weread, Inc.
+        %a(id="screenly-logo", href="http://www.wereadbook.cn", target="_blank")
           Screenly.io

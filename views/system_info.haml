@@ -4,9 +4,9 @@
   %head
     %meta(charset="utf-8")
       - if not player_name:
-        %title Screenly OSE
+        %title Weread
       - else:
-        %title Screenly OSE - ${player_name}
+        %title Weread - ${player_name}
 
     %link(href="/static/css/bootstrap.css", rel="stylesheet")
     %link(href="/static/css/screenly.css", rel="stylesheet")
@@ -29,27 +29,27 @@
             %li
               %a(href="/settings")
                 %i.icon-cog.icon-white
-                Settings
+                设置
             %li.divider-vertical
             %li
               %a(href="/system_info")
                 %i.icon-tasks.icon-white
-                System Info
+                系统信息
 
     .container
       .row
         .span12
           %h1.page-header
-            System Info
+            系统信息
 
           %table.table.table-bordered(style="width: 100%")
             %thead
               %tr
-                %th Load Average
-                %th Free Space
-                %th Uptime
-                %th Monitor Info
-                %th Display Power
+                %th 加载 平均
+                %th 空闲 空间
+                %th 运行时间
+                %th 监控 信息
+                %th 显示器 电源
             %tbody
               %tr
                 %td ${loadavg}
@@ -59,7 +59,7 @@
                 %td ${display_power}
           %section
             .header
-              Latest Viewer Logs
+              最新系统日志
 
           - if viewlog:
             %table.table.table-striped
@@ -72,6 +72,6 @@
     #footer
       .container
         .copy
-          &copy; Screenly, Inc.
-        %a(id="screenly-logo", href="http://screenly.io/", target="_blank")
+          &copy; Weread, Inc.
+        %a(id="screenly-logo", href="http://www.wereadbook.cn/", target="_blank")
           Screenly.io

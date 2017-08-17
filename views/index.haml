@@ -4,9 +4,9 @@
   %head
     %meta(charset="utf-8")
       - if not player_name:
-        %title Screenly OSE
+        %title Weread
       - else:
-        %title Screenly OSE - ${player_name}
+        %title Weread - ${player_name}
 
     / favicons
     %link(rel="apple-touch-icon-precomposed", sizes="57x57", href="/static/favicons/apple-touch-icon-57x57.png")
@@ -107,7 +107,7 @@
       .modal.hide.fade(tabindex="-1", role="dialog", ariaLabelledby="myModalLabel", ariaHidden="true")
         .form-horizontal
           .modal-header
-            %h3#modalLabel Add Asset
+            %h3#modalLabel 添加资源
           .modal-body
             
             .asset-location.add
@@ -117,7 +117,7 @@
                     %li.active.tabnav-uri(style="margin-left:180px")
                       %a(href="#tab-uri", dataToggle="tab") URL
                     %li.tabnav-file_upload
-                      %a(href="#tab-file_upload", dataToggle="tab") Upload
+                      %a(href="#tab-file_upload", dataToggle="tab") 上传
                   .tab-content
                     #tab-uri.tab-pane.active
                       
@@ -125,35 +125,35 @@
                       .control-group
                         .filedrop
                           .upload-header
-                            %button.btn Add Files..
+                            %button.btn 添加文件..
                             %input(type="file", name="file_upload")
                             %br
                             or
                           %div
-                            drop files here to upload
+                            拖拽文件到这上传
             %form#add-form
               %fieldset
                 .control-group.uri
-                  %label.control-label Asset URL
+                  %label.control-label 资源 URL
                   .controls
-                    %input.span4(type="text", name="uri", placeholder="Public URL to this asset's location")
+                    %input.span4(type="text", name="uri", placeholder="URL........")
 
               .asset-location.edit(style="display:none")
                 %fieldset
                 .control-group.name
-                  %label.control-label Name
+                  %label.control-label 名称
                   .controls
-                    %input.span4(type="text", name="name", placeholder="Nickname for this asset")
+                    %input.span4(type="text", name="name", placeholder="资产名称")
 
                 %fieldset
                   .control-group
-                    %label.control-label Asset Location
+                    %label.control-label 资源位置
                     .controls
                       .uri-text.span4.first
 
                 %fieldset
                   .control-group.mimetype
-                    %label.control-label Asset Type
+                    %label.control-label 资源类型
                     .controls
                       %select.mime-select.span2(name="mimetype")
                         %option(value="webpage") Webpage
@@ -165,22 +165,22 @@
                 %hr
                 %fieldset
                   .control-group.start_date
-                    %label.control-label Start Date
+                    %label.control-label 开始日期
                     .controls
                       %input.span2.date(type="text", name="start_date_date")
                       %input.span2.time(type="text", name="start_date_time")
                       %input(type="hidden", name="start_date")
                   .control-group.end_date
-                    %label.control-label End Date
+                    %label.control-label 结束日期
                     .controls
                       %input.span2.date(type="text", name="end_date_date")
                       %input.span2.time(type="text", name="end_date_time")
                       %input(type="hidden", name="end_date")
                   .control-group.duration
-                    %label.control-label Duration
+                    %label.control-label 持续时间
                     .controls
                       %input.span1(type="number", name="duration")
-                      seconds
+                      秒
                       &nbsp;
                       %span.muted.zerohint(style="display:none") use 0 to autodetect video length
                   .advanced-accordion.accordion
@@ -204,10 +204,10 @@
             .status
             .pull-left.progress.progress-striped.active(style="display:none")
               .bar
-            %input.btn.cancel(type="button", value="Cancel")
-            %input.btn.btn-primary(id="save-asset", type="submit", value="Save")
+            %input.btn.cancel(type="button", value="取消")
+            %input.btn.btn-primary(id="save-asset", type="submit", value="保存")
 
-    %script(type="text/template", id="subscribe-form-template")
+/*%script(type="text/template", id="subscribe-form-template")
       %div#subscribe-popover.popover.top(style="display:block")
         %div.arrow
         %div.popover-content
@@ -229,7 +229,7 @@
               %input(name="b_adb4f752497b0d86b3b1b79d7_5c47388076", tabindex="-1", type="text")
 
             %input#mc-embedded-subscribe.button(class_="btn", name="subscribe", type="submit", value="Subscribe")
-
+*/
 
   %body
     #request-error.navbar.navbar-fixed-top
@@ -248,12 +248,12 @@
             %li
               %a(href="/settings")
                 %i.icon-cog.icon-white
-                Settings
+                设置
             %li.divider-vertical
             %li
               %a(href="/system_info")
                 %i.icon-tasks.icon-white
-                System Info
+                系统信息
 
     .container
       .row
@@ -262,7 +262,7 @@
             .pull-right
               %a#add-asset-button.btn.btn-primary(href="#")
                 %i.icon-plus.icon-white
-                Add Asset
+                添加资源
             Schedule Overview
           - if player_name:
             %h2
@@ -272,13 +272,13 @@
         .span12
           %section
             .header
-              Active assets
+              活跃资源
             %table.table.table-striped.active-table
               %thead(style="display:none")
                 %tr
                   %th.asset_row_name Name
-                  %th(style="width:21%") Start
-                  %th(style="width:21%") End
+                  %th(style="width:21%") 开始
+                  %th(style="width:21%") 结束
                   %th(style="width:13%")
                   %th(style="width:7%")
               %tbody#active-assets
@@ -290,8 +290,8 @@
               %thead(style="display:none")
                 %tr
                   %th.asset_row_name Name
-                  %th(style="width:21%") Start
-                  %th(style="width:21%") End
+                  %th(style="width:21%") 开始
+                  %th(style="width:21%") 结束
                   %th(style="width:13%")
                   %th(style="width:7%")
               %tbody#inactive-assets
@@ -300,9 +300,9 @@
       .container
         .row
             .span6
-              %span Want to get more out of Screenly?
-                %a.brand(href="http://www.screenlyapp.com/?utm_source=Screenly-OSE&utm_medium=root-page&utm_campaign=OSE", target="_blank")
-                  %strong Try Screenly Pro.
+              %span 更多了解我们？
+                %a.brand(href="http://www.weread.cn", target="_blank")
+                  %strong Weread pro.
             .span6
               %div#subsribe-form-container
               %span
@@ -312,6 +312,6 @@
     #footer
       .container
         .copy
-          &copy; Screenly, Inc.
-        %a(id="screenly-logo", href="http://screenly.io/", target="_blank")
+          &copy; Weread, Inc.
+        %a(id="screenly-logo", href="http://www.weread.cn/", target="_blank")
           Screenly.io

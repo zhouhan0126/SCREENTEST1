@@ -235,7 +235,7 @@ def main():
     if not (wifi or ethernet):
         interfaces += if_config(interface='eth0', dns=dns)
 
-    write_file(INTERFACES_PATH, interfaces)
+    #write_file(INTERFACES_PATH, interfaces)
 
     """
     Configure NTP
